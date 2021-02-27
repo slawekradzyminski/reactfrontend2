@@ -5,12 +5,19 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import {logout, useAuthDispatch} from "../Context";
 
 const style = {
     flexGrow: 1
 };
 
 function NavBar() {
+    const dispatch = useAuthDispatch();
+
+    const handleLogout = () => {
+        logout(dispatch);
+    };
+
     return (
         <div>
             <AppBar position="static">
@@ -21,7 +28,7 @@ function NavBar() {
                     <Typography variant="h6" style={style}>
                         React User Application
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    <Button color="inherit" onClick={handleLogout}>Logout</Button>
                 </Toolbar>
             </AppBar>
         </div>

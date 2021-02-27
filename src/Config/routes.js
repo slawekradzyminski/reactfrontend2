@@ -19,17 +19,17 @@ const routes = [
 	{
 		path: '/users',
 		component: ListUserComponent,
-		isPrivate: false,
+		isPrivate: true,
 	},
 	{
 		path: '/add-user',
 		component: AddUserComponent,
-		isPrivate: false,
+		isPrivate: true,
 	},
 	{
 		path: '/edit-user',
 		component: EditUserComponent,
-		isPrivate: false,
+		isPrivate: true,
 	},
 	{
 		path: '/*',

@@ -16,7 +16,7 @@ function Login(props) {
 		try {
 			let response = await loginUser(dispatch, {email, password});
 			if (!response.user) return;
-			props.history.push('/dashboard');
+			props.history.push('/users');
 		} catch (error) {
 			console.log(error);
 		}
