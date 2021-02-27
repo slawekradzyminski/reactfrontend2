@@ -1,8 +1,11 @@
 import React, {useEffect, useState} from 'react'
-import ApiService from "../Api/ApiService";
+import ApiService from "../../Api/ApiService";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import NavBar from "../../Components/Navbar";
+import Container from "@material-ui/core/Container";
+import './editusercomponent.module.css';
 
 function EditUserComponent(props) {
 
@@ -65,27 +68,25 @@ function EditUserComponent(props) {
 
     return (
         <div>
-            <Typography variant="h4" style={style}>Edit User</Typography>
-            <form>
-                <TextField type="text" placeholder="userName" fullWidth margin="normal" name="userName"
-                           value={userName} onChange={saveUserName}/>
-                <TextField placeholder="First Name" fullWidth margin="normal" name="firstName"
-                           value={firstName} onChange={saveFirstName}/>
-                <TextField placeholder="Last name" fullWidth margin="normal" name="lastName"
-                           value={lastName} onChange={saveLastName}/>
-                <TextField type="number" placeholder="age" fullWidth margin="normal" name="age"
-                           value={age} onChange={saveAge}/>
-                <TextField type="number" placeholder="salary" fullWidth margin="normal" name="salary"
-                           value={salary} onChange={saveSalary}/>
-                <Button variant="contained" color="primary" onClick={saveUser}>Save</Button>
-            </form>
+            <NavBar/>
+            <Container>
+                <Typography variant="h4">Edit User</Typography>
+                <form>
+                    <TextField type="text" placeholder="userName" fullWidth margin="normal" name="userName"
+                               value={userName} onChange={saveUserName}/>
+                    <TextField placeholder="First Name" fullWidth margin="normal" name="firstName"
+                               value={firstName} onChange={saveFirstName}/>
+                    <TextField placeholder="Last name" fullWidth margin="normal" name="lastName"
+                               value={lastName} onChange={saveLastName}/>
+                    <TextField type="number" placeholder="age" fullWidth margin="normal" name="age"
+                               value={age} onChange={saveAge}/>
+                    <TextField type="number" placeholder="salary" fullWidth margin="normal" name="salary"
+                               value={salary} onChange={saveSalary}/>
+                    <Button variant="contained" color="primary" onClick={saveUser}>Save</Button>
+                </form>
+            </Container>
         </div>
     );
 }
-
-const style = {
-    display: 'flex',
-    justifyContent: 'center'
-};
 
 export default EditUserComponent;
